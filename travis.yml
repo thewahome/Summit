@@ -1,2 +1,4 @@
 language: csharp
 solution: Summit.sln
+install:
+  - nuget restore Summit.sln

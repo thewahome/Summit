@@ -11,7 +11,9 @@ before_script:
 after_script:
   - nunit-console SummitTests/bin/Debug/SummitTests.dll
 notifications:
-  webhooks:http://requestbin.fullcontact.com/13sz1px1
+  webhooks:
+    urls:
+      - https://requestbin.fullcontact.com/13sz1px1
     on_success: change # default: always
     on_failure: always # default: always
     on_start: change   # default: never

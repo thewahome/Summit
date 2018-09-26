@@ -1,6 +1,9 @@
 language: csharp
-solution: Summit.sln
-install:
+script:
+  - xbuild /p:Configuration=Debug Summit.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
   - nuget restore Summit.sln
-
-
+after_script:
+  - nunit-console SummitTests/bin/Debug/SummitTests.dll

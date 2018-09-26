@@ -1,6 +1,6 @@
 language: csharp
 install:
-  - nuget restore DataCalculator/DataCalculator.sln
+  - nuget restore Summit/Summit.sln
   - nuget install NUnit.Runners -Version 3.7.0 -OutputDirectory testrunner
 script:
   - xbuild Summit.sln

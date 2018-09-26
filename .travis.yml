@@ -1,6 +1,6 @@
 language: csharp
 install:
-  - nuget restore Summit/Summit.sln
+  - nuget restore Summit.sln
   - nuget install NUnit.Runners -Version 3.7.0 -OutputDirectory testrunner
 script:
   - xbuild Summit.sln

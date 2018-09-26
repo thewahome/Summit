@@ -1,15 +1,9 @@
 language: csharp
-install:
-  - nuget restore Summit.sln
-  - nuget install NUnit.Runners -Version 3.7.0 -OutputDirectory testrunner
-script:
-  - msbuild Summit.sln
-before_install:
-  - sudo apt-get install nunit-console
-before_script:
-  - nuget restore Summit.sln
-after_script:
-  - nunit-console SummitTests/bin/Debug/SummitTests.dll
+sudo: false
+
+script: 
+  - ./build.sh --target "Travis"
+  
 notifications:
   webhooks:
     urls:

@@ -1,4 +1,7 @@
 language: csharp
+install:
+  - nuget restore DataCalculator/DataCalculator.sln
+  - nuget install NUnit.Runners -Version 3.7.0 -OutputDirectory testrunner
 script:
   - xbuild Summit.sln
 before_install:
@@ -8,9 +11,8 @@ before_script:
 after_script:
   - nunit-console SummitTests/bin/Debug/SummitTests.dll
 notifications:
-  email:
-    recipients:
-      - thewahome.cw@gmail.com
-      - v-chgita@microsoft.com
+  notifications:
+  webhooks: http://your-domain.com/notifications
     on_success: always # default: change
     on_failure: always # default: always
+ 

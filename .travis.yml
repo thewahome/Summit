@@ -3,7 +3,7 @@ install:
   - nuget restore Summit.sln
   - nuget install NUnit.Runners -Version 3.7.0 -OutputDirectory testrunner
 script:
-  - xbuild Summit.sln
+  - msbuild Summit.sln
 before_install:
   - sudo apt-get install nunit-console
 before_script:
